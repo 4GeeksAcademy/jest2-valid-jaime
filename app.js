@@ -8,42 +8,26 @@ console.log(sum(7,3));
 
 // One euro is:
 let oneEuroIs = {
-    "JPY": 156.5, // japan yen
-    "USD": 1.07, // us dollar
-    "GBP": 0.87, // british pound
+    "JPY": 156.5,
+    "USD": 1.07,
+    "GBP": 0.87,
 }
 
-
-
-// Declaramos una función con el nombre exacto "formEuroToDollar"
-const fromEuroToDollar = function(valueInEuro) {
-    // Convertimos el valor a dólares
-    let valueInDollar = valueInEuro * 1.07;
-    // Retornamos el valor en dólares
-    return valueInDollar;
+let dollarToYen = function fromDollarToYen (dollar) {
+    let yen = dollar * 150.84;
+    return yen;
 }
 
-
-const valueInDollar = function(valueInYen) {
-    let valueInYen = (valueInEuro / valueInDollar) * 156.5;
-    return valueInYen;
-}
-console.log (valueInYen(30));
-
-const fromDollarToYen = function(valueInDollar) {
-    // Tu recibes dolares, y los paso a euros
-    // A esos Euros, los paso a Yen
-    let valueInYen = valueInEuro * 156.5;
-    return valueInYen;
+let euroToDollar = function fromEuroToDollar(euro) {
+    let dollar = euro * 1.07;
+    return dollar;
 }
 
-
-const fromYenToPound = function(valueInPounds) {
-    let valueInPounds = valueInEuro * 0.87;
-    return valueInPounds;
+let yenToPound = function fromYenToPound (yen) {
+    let pound = yen * 0.0052;
+    return pound;
 }
 
-
-module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound};
+module.exports ={euroToDollar, dollarToYen, yenToPound};
 
 
